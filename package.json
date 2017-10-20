@@ -15,6 +15,7 @@
     "child process",
     "terminal"
   ],
+  "license": "MIT",
   "main": "lib/suspect.js",
   "types": "lib/suspect.d.ts",
   "scripts": {
