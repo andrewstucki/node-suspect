@@ -1,7 +1,7 @@
 {
   "name": "node-suspect",
   "description": "SUbprocesS exPECTations for node.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Andrew Stucki <andrew.stucki@gmail.com>",
   "maintainers": [
     "Andrew Stucki <andrew.stucki@gmail.com>"
