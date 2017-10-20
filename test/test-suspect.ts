@@ -15,7 +15,7 @@ describe("spawning", () => {
 
   it("should check stderr if specified", (done) => {
     spawn("ls", ["-la", "undefined"], { stream: "stderr" })
-      .expect(/No such file or directory/)
+      .wait(/No such file or directory/)
       .run((err: Error, stdout: string[]) => {
         expect(err, err ? err.message : "").to.equal(undefined);
         expect(stdout).to.be.an("Array");
