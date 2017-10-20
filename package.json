@@ -19,7 +19,7 @@
   "main": "lib/suspect.js",
   "types": "lib/suspect.d.ts",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "tsc",
     "lint": "tslint '{src,test}/**/*.ts'",
     "test": "mocha -r ts-node/register test/**/*.ts"
