@@ -7,7 +7,7 @@ import { spawn } from "../src/suspect";
 describe("spawning", () => {
   it("should do basic expectations", (done) => {
     spawn("echo", ["hello"]).expect("hello").run((err: Error, stdout: string[]) => {
-      expect(err).to.equal(undefined);
+      expect(err, err ? err.message : '').to.equal(undefined);
       expect(stdout).to.deep.equal(["hello"]);
       done();
     });
@@ -17,7 +17,7 @@ describe("spawning", () => {
     spawn("ls", ["-la", "/tmp/undefined"], { stream: "stderr" })
       .expect("No such file or directory")
       .run((err: Error, stdout: string[]) => {
-        expect(err).to.equal(undefined);
+        expect(err, err ? err.message : '').to.equal(undefined);
         expect(stdout).to.be.an("Array");
         done();
       });
@@ -37,14 +37,14 @@ describe("spawning", () => {
       .expect("testing")
       .sendline("process.exit()")
       .run((err: Error) => {
-        expect(err).to.equal(undefined);
+        expect(err, err ? err.message : '').to.equal(undefined);
         done();
       });
   });
 
   it("should do regexp expectations", (done) => {
     spawn("echo", ["hello"]).expect(/^hello$/).run((err: Error, stdout: string[]) => {
-      expect(err).to.equal(undefined);
+      expect(err, err ? err.message : '').to.equal(undefined);
       expect(stdout).to.deep.equal(["hello"]);
       done();
     });
@@ -59,7 +59,7 @@ describe("spawning", () => {
       .sendline("second-prompt")
       .expect("second-prompt")
       .run((err: Error) => {
-        expect(err).to.equal(undefined);
+        expect(err, err ? err.message : '').to.equal(undefined);
         done();
       });
   });
@@ -122,7 +122,7 @@ describe("spawning", () => {
       .wait("second has colors")
       .expect("third has colors")
       .run((err: Error) => {
-        expect(err).to.equal(undefined);
+        expect(err, err ? err.message : '').to.equal(undefined);
         done();
       });
   });
@@ -131,7 +131,7 @@ describe("spawning", () => {
     spawn(path.join(__dirname, "fixtures", "show-env"), [], { env: { foo: "bar", PATH: process.env.PATH } })
       .expect("foo=bar")
       .run((err: Error) => {
-        expect(err).to.equal(undefined);
+        expect(err, err ? err.message : '').to.equal(undefined);
         done();
       });
   });
@@ -140,7 +140,7 @@ describe("spawning", () => {
     spawn(`"${path.join(__dirname, "fixtures", "test spaces")}"`, ["'hi there'"], { shell: true })
       .wait("hi there")
       .run((err: Error) => {
-        expect(err).to.equal(undefined);
+        expect(err, err ? err.message : '').to.equal(undefined);
         done();
       });
   });
