@@ -1,5 +1,8 @@
 # Node SUbprocesS exPECTations (node-suspect)
 
+[![Travis Build Status](https://travis-ci.org/andrewstucki/node-suspect.svg?branch=master)](https://travis-ci.org/andrewstucki/node-suspect)
+
+
 `node-suspect` is a node.js module for spawning child applications (such as ssh) and
 seamlessly controlling them using javascript callbacks. nexpect is based on the
 ideas of the [expect][0] library by Don Libes and the [pexpect][1] library by
