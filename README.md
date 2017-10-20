@@ -98,7 +98,7 @@ which causes the app to block on input when the input stream is a pipe.
 * callback {function} Called when child process closes, with arguments
   * err {Error|null} Error if any occurred
   * output {Array} Array of lines of output examined
-  * exit {Number|String} Numeric exit code, or String name of signal
+  * exit {number|string} Numeric exit code, or String name of signal
 
 Called at the end of the subprocess invocation.
 
