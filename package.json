@@ -1,0 +1,38 @@
+{
+  "name": "node-suspect",
+  "description": "SUbprocesS exPECTations for node.js",
+  "version": "0.1.0",
+  "author": "Andrew Stucki <andrew.stucki@gmail.com>",
+  "maintainers": [
+    "Andrew Stucki <andrew.stucki@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/andrewstucki/node-suspect.git"
+  },
+  "keywords": [
+    "spawn",
+    "child process",
+    "terminal"
+  ],
+  "main": "lib/suspect.js",
+  "types": "lib/suspect.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc",
+    "lint": "tslint '{src,test}/**/*.ts'",
+    "test": "mocha -r ts-node/register test/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.46",
+    "chai": "^4.1.2",
+    "colors": "^1.1.2",
+    "mocha": "^4.0.1",
+    "prompt": "^1.0.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  }
+}
