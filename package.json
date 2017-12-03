@@ -10,6 +10,9 @@
     "type": "git",
     "url": "http://github.com/andrewstucki/node-suspect.git"
   },
+	"files": [
+		"lib"
+	],
   "keywords": [
     "spawn",
     "child process",
@@ -35,5 +38,6 @@
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
     "typescript": "^2.5.3"
-  }
+  },
+  "dependencies": {}
 }
