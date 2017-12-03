@@ -151,7 +151,7 @@ export class SpawnChain {
     }
 
     function handleData(data: string) {
-      data = data.toString().replace(/\u001b\[\d{0,2}m/g, "");
+      data = data.toString().replace(/\u001b\[\d{0,2}./g, "");
       const lines = data.split("\n").filter((line) => line.length > 0);
       stdout = stdout.concat(lines);
 
